@@ -1,9 +1,18 @@
 <%= form_for( @user , remote: true ) do |f| %>
+
+    <ul>
+        <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+
+    <%= f.label :email, "Email" %>
     <%= f.email_field :email, placeholder: "example@example.com", value: "test@email.com" %>
     
     <%= f.label :username, "Your user name here" %>
     <%= f.text_field :username %>
 
+    <%= f.label :password, "Pasword" %>
     <%= f.password_field :password %>
 
     <%= f.submit "Register" %>
