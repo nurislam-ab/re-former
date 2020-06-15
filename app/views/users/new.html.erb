@@ -18,7 +18,9 @@
 <% 
 =end %>
 
-<%= form_tag(:users, method: :post) do %>
+<%
+=begin%>
+ <%= form_tag(:users, method: :post) do %>
     <%= label_tag(:email, "Email") %>
     <%= email_field(:user, :email) %>
     
@@ -29,4 +31,7 @@
     <%= password_field_tag(:password) %>
 
     <%= submit_tag("submit") %>
-<% end %>
+<% end %> 
+<%
+=end%>
+
