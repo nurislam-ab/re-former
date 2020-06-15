@@ -35,3 +35,12 @@
 <%
 =end%>
 
+<%= form_for( @user , remote: ) do |f| %>
+    <%= f.email_field :email %>
+
+    <%= f.text_field :username %>
+
+    <%= f.password_field :password %>
+
+    <%= f.submit "Register" %>
+<% end %>
