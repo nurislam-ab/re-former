@@ -1,0 +1,16 @@
+<%
+=begin%>
+ <%= form_for( @user , remote: true ) do |f| %>
+    <%= f.email_field :email, placeholder: "example@example.com", value: "test@email.com" %>
+    
+    <%= f.label :username, "Your user name here" %>
+    <%= f.text_field :username %>
+
+    <%= f.password_field :password %>
+
+    <%= f.submit "Register" %>
+<% end %> 
+<%
+=end%>
+
+<%= render partial: "form" %>

@@ -1,0 +1,54 @@
+<%
+=begin %>
+<form action="<%= users_path%>" method="post" accept-charset="UTF-8">
+    
+    <%= label_tag(:email, "Email") %>
+    <input type="email" name="user[email]"><br>
+
+    <%= label_tag(:username, "Username") %>
+    <input type="text" name="user[username]"><br>
+
+    <%= label_tag(:password, "Password") %>
+    <input type="password" name="user[password]">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <input type="submit">
+</form>
+<% 
+=end %>
+
+<%
+=begin%>
+ <%= form_tag(:users, method: :post) do %>
+    <%= label_tag(:email, "Email") %>
+    <%= email_field(:user, :email) %>
+    
+    <%= label_tag(:username, "Username") %>
+    <%= text_field_tag(:username) %>
+
+    <%= label_tag(:password, "Password") %>
+    <%= password_field_tag(:password) %>
+
+    <%= submit_tag("submit") %>
+<% end %> 
+<%
+=end%>
+
+
+<%
+=begin%>
+ <%= form_for( @user , remote: true ) do |f| %>
+    <%= f.email_field :email, placeholder: "example@example.com", value: "test@email.com" %>
+    
+    <%= f.label :username, "Your user name here" %>
+    <%= f.text_field :username %>
+
+    <%= f.password_field :password %>
+
+    <%= f.submit "Register" %>
+<% end %> 
+<%
+=end%>
+
+<%= render partial: "form" %>
